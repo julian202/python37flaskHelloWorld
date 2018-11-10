@@ -1,0 +1,55 @@
+testenv is the folder used by pycharm as the python2.7 environment for this (myapp) project
+
+
+virtualenv env (creates a folder env with an environment)  or  virtualenv -p C:\Python27\python.exe newenv27
+then activate it by typing:
+newenv\Scripts\activate
+newenv27\Scripts\activate
+newenv27lib\Scripts\activate
+
+********to test your project:*************************
+
+1. open powershell in admin mode.
+
+2. type  cd "C:\Users\julia\OneDrive\App Engine and More\WaterMyLawn\myapp"
+
+3. pip install -r requirements.txt
+
+4. python main.py
+
+5. open chrome to http://localhost:8080
+
+
+********to deploy your project:*************************
+
+1. go to https://console.cloud.google.com  and choose project WaterMyLawn
+
+2. click on activate cloud shell on the top right 
+
+3. git clone https://github.com/julian202/WaterMyLawnGithub
+or git clone https://github.com/julian202/python37flaskHelloWorld
+or git pull origin master
+
+4. cd WaterMyLawnGithub/myapp
+or cd python37flaskHelloWorld 
+
+5. virtualenv --python python3 \
+    ~/envs/myapp
+
+6. source \
+    ~/envs/myapp/bin/activate
+
+7. pip install -r requirements.txt
+
+8. python main.py
+
+9. click "web preview" icon to navigate to your test site
+
+10. ctr+c to close instance
+
+11. gcloud app deploy app.yaml --project \
+    watermylawn-221519
+or gcloud app deploy
+
+
+(you might have to enable Cloud Build API by going to the API's menu in the your project in google cloud)
